@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng ký</h1>
+        <p>QuizForge - Nền tảng sáng tạo bài kiểm tra trực tuyến, giúp bạn dễ dàng thiết kế, chia sẻ và thực hiện các bài kiểm
+            tra một cách nhanh chóng và hiệu quả!</p>
+        <div class="box">
+            <input id="name" type="text" placeholder="Họ và tên">
+            <div class="error" id="nameError">Tên không hợp lệ.</div>
+            <input id="email" type="email" placeholder="Địa chỉ email">
+            <div class="error" id="emailError">Email không hợp lệ.</div>
+            <input id="password" type="password" placeholder="Mật khẩu">
+            <div class="error" id="passwordError">Mật khẩu phải có ít nhất 8 ký tự.</div>
+            <input id="confirmPassword" type="password" placeholder="Xác nhận mật khẩu">
+            <div class="error" id="confirmPasswordError">Mật khẩu xác nhận không khớp.</div>
+            <button onclick="validate()">Đăng ký</button>
+            <p class="link">đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+        </div>
+    </div>
+
+    <script src="../js/register.js"></script>
+</body>
+</html>

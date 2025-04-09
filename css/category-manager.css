@@ -1,0 +1,262 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+.header h1 {
+    padding-left: 50px;
+}
+.header div {
+    padding-right: 20px;
+}
+.header a {
+    padding-right: 50px;
+}
+
+.container {
+    width: 80%;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+}
+
+.container h2 {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#addItem {
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 130px;
+    color: white;
+    background-color: rgb(13, 110, 253);
+    margin-bottom: 10px;
+}
+
+tr th {
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    border: 1px solid rgb(222, 226, 230);
+}
+tr td {
+    border: 1px solid rgb(222, 226, 230);
+}
+
+.idTable {
+    width: 15%;
+    height: 30px;
+    text-align: center;
+}
+.nameTable {
+    width: 60%;
+    height: 30px;
+    text-align: left;
+}
+.statusTable {
+    width: 25%;
+    height: 30px;
+    text-align: center;
+}
+
+#tableList {
+    width: 100%;
+}
+
+#pageList {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.paginationButton {
+    color: rgb(13, 110, 253);
+    height: 30px;
+    width: 30px;
+}
+.footer {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 20px;
+}
+.fixButton {
+    background-color: rgb(242, 183, 7);
+    color: black;
+    border: none;
+    height: 25px;
+    width: 40px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+.delButton {
+    background-color: rgb(220, 53, 69);
+    color: rgb(255, 255, 255);
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+    width: 60px;
+}
+
+#addOrFixGui {
+    position: fixed;
+    width: 400px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    z-index: 20;
+    display: none;
+}
+
+#addOrFixGui #addOrFixGuiName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#addOrFixGui #addOrFixGuiName button {
+    height: 30px;
+    width: 30px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#addOrFixGui p {
+    text-align: left;
+    margin-top: 20px;
+}
+#addOrFixGui input {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.162);
+    height: 30px;
+    width: 100%;
+}
+
+#emojiItem {
+    margin-bottom: 30px;
+}
+
+#playerSelectButton {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+#dontSave {
+    height: 25px;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(108, 117, 125);
+    color: white;
+    margin-right: 10px;
+}
+
+#save {
+    height: 25px;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(13, 110, 253);
+    color: white;
+}
+
+#addOrFixGui hr {
+    background-color: #00000016;
+}
+.hr2 {
+    margin-top: 30px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.paginationButton:disabled {
+    background-color: #ccc;
+
+}
+
+#deleteGui {
+    position: fixed;
+    width: 400px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    z-index: 20;
+    display: none;
+}
+
+#deleteGuiName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#deleteGui #deleteGuiName button {
+    height: 30px;
+    width: 30px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#deleteGui p {
+    text-align: left;
+    margin-top: 20px;
+}
+
+
+#playerSelectDelButton {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#decideDelete {
+    height: 25px;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(108, 117, 125);
+    color: white;
+    margin-right: 10px;
+}
+
+#acceptDelete {
+    height: 25px;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(220, 53, 69);
+    color: white;
+}

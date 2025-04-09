@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Đăng nhập</h1>
+        <p>QuizForge - Nền tảng sáng tạo bài kiểm tra trực tuyến, giúp bạn dễ dàng thiết kế, chia sẻ và thực hiện các
+            bài kiểm
+            tra một cách nhanh chóng và hiệu quả!</p>
+        <div class="box">
+            <h4>Email</h4>
+            <input id="email" type="email" placeholder="Địa chỉ email">
+            <h4>Password</h4>
+            <input id="password" type="password" placeholder="Mật khẩu">
+            <div class="error" id="errorSecret">Email hoặc mật khẩu sai!</div>
+            <button onclick="validate()">Đăng nhập</button>
+            <p class="link">Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

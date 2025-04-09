@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/addProduct-manager.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="header">
+        <h1>QuizzForge</h1>
+        <div>
+            <a href="../pages/product-manager.html">Bài test</a>
+            <a href="" class="opa">Tạo bài test</a>
+            <a href="../pages/login.html">Đăng xuất</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Tạo bài test</h2>
+        <div id="taskBar">
+            <p class="p1">Tên bài test</p>
+            <input id="nameProduct" type="text" placeholder="Điền tên bài test">
+            <div class="error" id="errorNameProduct">Tên không được để trống</div>
+            <div class="taskBar1">
+                <div class="taskBar1_1">
+                    <p>Danh mục</p>
+                    <select id="choiceDirectory" name="">
+                        <!-- Them danh muc -->
+                    </select>
+                    <div class="error" id="errorChoiceDirectory">Tên không được để trống</div>
+                </div>
+                <div class="taskBar1_2">
+                    <p>Thời gian (phút)</p>
+                    <input type="number" value="15" class="input1" id="timePlay">
+                    <div class="error" id="errorTimePlay">Tên không được để trống</div>
+                </div>
+            </div>
+            <h3>Quản lý câu hỏi</h3>
+            <div class="div1">
+                <button id="addItem" onclick="showAddOrFixQuestionGui()">Thêm câu hỏi</button>
+                <button id="addItem" onclick="addTest()">Lưu</button>
+            </div>
+        </div>
+        <div class="error" id="errorAddQuestion">Email hoặc mật khẩu sai!</div>
+        <table cellspacing="0" cellpadding="5" id="tableList">
+
+        </table>
+        <div id="pageList">
+            <!-- YAPPE -->
+        </div>
+
+    </div>
+    <p class="footer">&copy; 2025 QuizForge. All rights reserved.</p>
+    <div id="addOrFixGui">
+        <div id="addOrFixGuiName">
+            <h3 id="nametitleAddFixGui">Thêm câu hỏi</h3>
+            <button onclick="closeAddOrFixQuestionGui()">x</button>
+        </div>
+        <hr>
+        <p>Câu hỏi</p>
+        <input type="text" id="nameItemInput" placeholder="Nhập câu hỏi">
+        <div class="error" id="errorNameItemInput">Email hoặc mật khẩu sai!</div>
+        <p>Câu trả lời</p>
+        <div class="answer-list" id="answerList">
+            <!-- them cau hoi cau tra loi -->
+        </div>
+        <button id="addMoreAnswer" onclick="addAnswer()">Thêm câu trả lời</button>
+        <div class="error" id="errorAnswerItemInput">Email hoặc mật khẩu sai!</div>
+        <hr class="hr2">
+        <div id="playerSelectButton">
+            <button id="dontSave" onclick="closeAddOrFixQuestionGui()">Hủy</button>
+            <button id="save" onclick="addQuestion()">Lưu</button>
+        </div>
+    </div>
+
+    <div id="deleteGui">
+        <div id="deleteGuiName">
+            <h3>Xác nhận xóa</h3>
+            <button onclick="closeDeleteItem()">x</button>
+        </div>
+        <hr>
+        <p>Bạn chắc chắn muốn xóa danh mục này ?</p>
+        <hr class="hr2">
+        <div id="playerSelectDelButton">
+            <button id="decideDelete" onclick="closeDeleteItem()">Hủy</button>
+            <button id="acceptDelete" onclick="delCategory()">Xóa</button>
+        </div>
+    </div>
+    
+    <script src="../js/loginCheck.js"></script>
+    <script src="../js/addProduct-manager.js"></script>
+</body>
+</html>

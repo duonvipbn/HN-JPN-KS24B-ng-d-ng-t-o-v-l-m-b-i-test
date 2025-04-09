@@ -1,0 +1,143 @@
+
+body {
+    background-color: rgb(244, 244, 244);
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.header h1 {
+    padding-left: 50px;
+}
+
+.header div {
+    padding-right: 20px;
+}
+
+.header a {
+    padding-right: 50px;
+}
+.header input {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+}
+
+.container {
+    width: 80%;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+}
+
+.container h2 {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 20px;
+}
+#playIntro {
+    background-color: rgb(74, 61, 181);
+    text-align: center;
+    height: 100px;
+}
+#playIntro p {
+    font-size: 20px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#playIntro button {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 193, 7);
+    height: 30px;
+    width: 50px;
+}
+
+#p1 {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#sortUp {
+    height: 30px;
+    border-radius: 5px;
+}
+#sortDown {
+    height: 30px;
+    border-radius: 5px;
+}
+
+#list {
+    width: 100%;
+    background: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.item {
+    display: flex;
+    text-align: center;
+    width: 45%;
+    height: 145px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.item img {
+    height: 100%;
+    width: 20%;
+}
+.itemSetup {
+    height: 100%;
+    width: 80%;
+}
+.typeItem {
+    margin-bottom: 30px;
+}
+.nameItem {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.playItemButton {
+    background-color: rgb(255, 193, 7);
+    border-radius: 5px;
+    border: none;
+    color: black;
+    height: 23px;
+    width: 40px;
+}
+#pageList {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#pageList button {
+    color: rgb(13, 110, 253);
+    height: 30px;
+    width: 30px;
+}

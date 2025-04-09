@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/category-manager.css">
+
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="header">
+        <h1>QuizzForge</h1>
+        <div>
+            <a href="" class="opa">Danh mục</a>
+            <a href="../pages/product-manager.html" >Bài test</a>
+            <a href="../pages/login.html">Đăng xuất</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Quản lý danh mục</h2>
+        <button id="addItem" onclick="openFixOrAddItem('add')">Thêm danh mục</button>
+        <table  cellspacing="0" cellpadding="5" id="tableList">
+            <!-- them item o day -->
+        </table>
+        <div id="pageList">
+        </div>
+    </div>
+    <p class="footer">&copy; 2025 QuizForge. All rights reserved.</p>
+    <div id="addOrFixGui">
+        <div id="addOrFixGuiName">
+            <h3 id="nametitleAddFixGui"></h3>
+            <button onclick="closeFixOrAddGui()">x</button>
+        </div>
+        <hr>
+        <p>Tên danh mục</p>
+        <input type="text" id="nameItemInput">
+        <div class="error" id="errorNameItem">Email hoặc mật khẩu sai!</div>
+        <p>Emoji</p>
+        <input type="text" id="emojiItemInput">
+        <div class="error" id="errorEmojiItem">Email hoặc mật khẩu sai!</div>
+        <hr class="hr2">
+        <div id="playerSelectButton">
+            <button id="dontSave" onclick="closeFixOrAddGui()">Hủy</button>
+            <button id="save" onclick="fixOrAddCategory()">Lưu</button>
+        </div>
+    </div>
+
+    <div id="deleteGui">
+        <div id="deleteGuiName">
+            <h3>Xác nhận xóa</h3>
+            <button onclick="closeDeleteItem()">x</button>
+        </div>
+        <hr>
+        <p>Bạn chắc chắn muốn xóa danh mục này ?</p>
+        <hr class="hr2">
+        <div id="playerSelectDelButton">
+            <button id="decideDelete" onclick="closeDeleteItem()">Hủy</button>
+            <button id="acceptDelete" onclick="delCategory()">Xóa</button>
+        </div>
+    </div>
+    <script src="../js/loginCheck.js"></script>
+    <script src="../js/category-manager.js"></script>
+</body>
+</html>
