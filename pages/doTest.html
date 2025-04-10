@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/doTest.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>QuizzForge</h1>
+        <input type="text" placeholder="Tìm kiếm bài test">
+        <div>
+            <a href="" class="opa">Trang chủ</a>
+            <a href="../pages/login.html">Đăng xuất</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box1">
+            <h3>Điều hướng nhanh</h3>
+            <div id="questsList">
+                <button class="questsListItem">1</button>
+                <button class="questsListItem">2</button>
+                <button class="questsListItem">3</button>
+                <button class="questsListItem">4</button>
+                <button class="questsListItem">5</button>
+                <button class="questsListItem">6</button>
+                <button class="questsListItem">7</button>
+                <button class="questsListItem">8</button>
+                <button class="questsListItem">9</button>
+                <button class="questsListItem">10</button>
+            </div>
+            <p class="tip">Lưu ý: Đây là danh sách câu hỏi bạn có thể sử dụng dụng để điều hướng.</p>
+        </div>
+        <div class="box2">
+            <h1 id="nameQuest">Tên bài test</h1>
+            <h3 id="numberQuest">Cau hoi 1 tren 20:</h3>
+            <p id="quest">WHITCH Í THE touch?</p>
+            <div id="answerList">
+                <div class="answerBox">
+                    <input type="checkbox">
+                    <p>Data</p>
+                </div>
+                <div class="answerBox">
+                    <input type="checkbox">
+                    <p>Operating</p>
+                </div>
+                <div class="answerBox">
+                    <input type="checkbox">
+                    <p>heard</p>
+                </div>
+                <div class="answerBox">
+                    <input type="checkbox">
+                    <p>Sòt</p>
+                </div>
+            </div>
+            <button id="doneAQuestButton">Hoàn thành</button>
+        </div>
+        <div class="box3">
+            <p id="timeTest">
+                thời gian: 25 phút
+            </p>
+            <p id="timeTestNow">
+                Còn lại: 23:40 phút
+            </p>
+            <div class="div1">
+                <button id="backQuest">Trước</button>
+                <button id="nextQuest">Tiếp</button>
+            </div>
+        </div>
+    </div>
+    <p class="footer">&copy; 2025 QuizForge. All rights reserved.</p>
+    <script src="../js/loginCheck.js"></script>
+    <script src="../js/doTest.js"></script>
+</body>
+
+</html>

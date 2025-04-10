@@ -127,6 +127,7 @@ a {
     color: black;
     height: 23px;
     width: 40px;
+    margin-top: 20px;
 }
 #pageList {
     margin-top: 20px;
@@ -140,4 +141,19 @@ a {
     color: rgb(13, 110, 253);
     height: 30px;
     width: 30px;
+}
+
+.paginationButton {
+    color: rgb(13, 110, 253);
+    height: 30px;
+    width: 30px;
+}
+
+.paginationButton:disabled {
+    background-color: #ccc;
+
+}
+
+.sortButtonSelect {
+    background-color: rgb(13, 110, 253);
 }

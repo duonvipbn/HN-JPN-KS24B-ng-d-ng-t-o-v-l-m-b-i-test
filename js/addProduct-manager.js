@@ -119,8 +119,8 @@ function removeAnswer(index) {
 function addQuestion() {
     let nameItemInputA = nameItemInput.value.trim();
 
-    if (questions.length > 49) {
-        errorAnswerItemInput.innerHTML = "Bài test không quá 50 câu hỏi!";
+    if (questions.length > 39) {
+        errorAnswerItemInput.innerHTML = "Bài test không quá 40 câu hỏi!";
         errorAnswerItemInput.style.display = "block";
         return;
     } else {
@@ -370,7 +370,6 @@ function delCategory() {
 function openFixItem(index) {
     nameItemInput.value = questions[index].content;
     answers = questions[index].answers;
-    // questions.splice(index, 1);
     showAddOrFixQuestionGui(index);
     showAnswer();
 }
