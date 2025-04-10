@@ -1,6 +1,7 @@
 // let dataName = "dataProject";
 let dataProductName = "dataProduct";
 let dataCategoryName = "dataCategory";
+let saveIDFixItemName = "saveIDFixItem";
 
 let selectIndexDelete = -1;
 let page = 1;
@@ -24,7 +25,7 @@ let errorChoiceDirectory = document.getElementById("errorChoiceDirectory");
 let errorAddQuestion = document.getElementById("errorAddQuestion");
 let errorNameItemInput = document.getElementById("errorNameItemInput");
 
-let modeIndex = -1;
+let modeIndexFix = -1;
 
 let questions = [];
 let answers = [];
@@ -41,11 +42,15 @@ function getDataCategory() {
     return JSON.parse(localStorage.getItem(dataCategoryName)) || [];
 }
 
-function showAddOrFixQuestionGui(modeIndexA) {
-    if (modeIndexA) {
-        modeIndex = modeIndexA;
+function getSaveIDFixItem() {
+    return JSON.parse(localStorage.getItem(saveIDFixItemName)) || -1;
+}
+
+function showAddOrFixQuestionGui(modeIndexFixA) {
+    if (modeIndexFixA >= 0) {
+        modeIndexFix = modeIndexFixA;
     } else {
-        modeIndex = -1;
+        modeIndexFix = -1;
     }
     overlay.style.display = "block";
     addOrFixGui.style.display = "block";
@@ -130,8 +135,8 @@ function addQuestion() {
         errorNameItemInput.style.display = "none";
     }
 
-    if (nameItemInputA.length > 30) {
-        errorNameItemInput.innerHTML = "tên không được dài quá 30 chữ!";
+    if (nameItemInputA.length > 60) {
+        errorNameItemInput.innerHTML = "tên không được dài quá 60 chữ!";
         errorNameItemInput.style.display = "block";
         return;
     } else {
@@ -172,8 +177,9 @@ function addQuestion() {
         content: nameItemInputA,
         answers, 
     }
-    if (modeIndex !== -1) {
-        questions[modeIndex] = temp;
+    
+    if (modeIndexFix !== -1) {
+        questions[modeIndexFix] = temp;
     } else {
         questions.push(temp);
     }
@@ -181,6 +187,9 @@ function addQuestion() {
     nameItemInput.value = "";
     answerList.innerHTML = "";
     answers = [];
+
+    modeIndexFix = -1;
+    
     updateAnswerList();
     closeAddOrFixQuestionGui();
 }
@@ -190,6 +199,7 @@ function addTest() {
     let choiceDirectoryA = choiceDirectory.value;
     let timePlayA = Number(timePlay.value);
     let dataProduct = getDataProduct();
+    let dataSaveIDFixItem = getSaveIDFixItem();
 
     if (!nameProductA) {
         errorNameProduct.innerHTML = "Tên không được để trống";
@@ -199,8 +209,8 @@ function addTest() {
         errorNameProduct.style.display = "none";
     }
 
-    if (nameProductA.length > 30) {
-        errorNameProduct.innerHTML = "Tên không được để quá 30 chữ";
+    if (nameProductA.length > 60) {
+        errorNameProduct.innerHTML = "Tên không được để quá 60 chữ";
         errorNameProduct.style.display = "block";
         return;
     } else {
@@ -209,6 +219,9 @@ function addTest() {
     
     for (let i = 0; i < dataProduct.length; i++){
         if (nameProductA === dataProduct[i].testName) {
+            if (dataSaveIDFixItem !== -1) {
+                break;
+            }
             errorNameProduct.innerHTML = "Tên đã tồn tại!!";
             errorNameProduct.style.display = "block";
             return;
@@ -258,26 +271,39 @@ function addTest() {
     }
     // SAVEEEEEEEEEEEEEEEEEEEEEEE
 
-    let id;
-    if (dataProduct.length === 0) {
-        id = 1;
+    if (dataSaveIDFixItem !== -1) {
+        for (let i = 0; i < dataProduct.length; i++) {
+            if (dataSaveIDFixItem === dataProduct[i].id) {
+                dataProduct[i].testName = nameProductA;
+                dataProduct[i].categoryId = Number(choiceDirectoryA);
+                dataProduct[i].playerTime = timePlayA;
+                dataProduct[i].questions = questions;
+                break;
+            }
+        }
     } else {
-        id = dataProduct[dataProduct.length - 1].id + 1;
+        let id;
+
+        if (dataProduct.length === 0) {
+            id = 1;
+        } else {
+            id = dataProduct[dataProduct.length - 1].id + 1;
+        }
+
+        let temp = {
+            id,
+            testName: nameProductA,
+            categoryId: Number(choiceDirectoryA),
+            playerTime: timePlayA,
+            playAmount: 0,
+            questions,
+        };
+
+        dataProduct.push(temp);
     }
-    let temp = {
-        id,
-        testName: nameProductA,
-        categoryId: Number(choiceDirectoryA),
-        playerTime: timePlayA,
-        playAmount: 0,
-        questions,
-    };
-    console.log(temp);
-    
-    dataProduct.push(temp);
 
     localStorage[dataProductName] = JSON.stringify(dataProduct);
-
+    localStorage.setItem(saveIDFixItemName, -1);
     window.location.href = "../pages/product-manager.html";
 }
 
@@ -349,5 +375,26 @@ function openFixItem(index) {
     showAnswer();
 }
 
+function workingIfFix() {
+    let dataSaveIDFixItem = getSaveIDFixItem();
+    let dataProduct = getDataProduct();
+    if (dataSaveIDFixItem === -1) {
+        return;
+    }
+
+    // tim index :)
+    for (let i = 0; i < dataProduct.length; i++){
+        if (dataSaveIDFixItem === dataProduct[i].id) {
+            nameProduct.value = dataProduct[i].testName;   
+            choiceDirectory.value = dataProduct[i].categoryId;
+            timePlay.value = dataProduct[i].playerTime;
+            questions = dataProduct[i].questions;
+            break;
+        }
+    }
+    updateAnswerList();
+}
+
 updateAnswerList();
 loadDataCategory();
+workingIfFix();
