@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="overlay" id="overlay"></div>
     <div class="header">
         <h1>QuizzForge</h1>
         <input type="text" placeholder="Tìm kiếm bài test">
@@ -22,57 +23,65 @@
         <div class="box1">
             <h3>Điều hướng nhanh</h3>
             <div id="questsList">
-                <button class="questsListItem">1</button>
-                <button class="questsListItem">2</button>
-                <button class="questsListItem">3</button>
-                <button class="questsListItem">4</button>
-                <button class="questsListItem">5</button>
-                <button class="questsListItem">6</button>
-                <button class="questsListItem">7</button>
-                <button class="questsListItem">8</button>
-                <button class="questsListItem">9</button>
-                <button class="questsListItem">10</button>
+                <!-- THEM CAU HOI O DAYY -->
             </div>
             <p class="tip">Lưu ý: Đây là danh sách câu hỏi bạn có thể sử dụng dụng để điều hướng.</p>
         </div>
         <div class="box2">
             <h1 id="nameQuest">Tên bài test</h1>
             <h3 id="numberQuest">Cau hoi 1 tren 20:</h3>
-            <p id="quest">WHITCH Í THE touch?</p>
+            <p id="questAsk">LOAD</p>
             <div id="answerList">
-                <div class="answerBox">
-                    <input type="checkbox">
-                    <p>Data</p>
-                </div>
-                <div class="answerBox">
-                    <input type="checkbox">
-                    <p>Operating</p>
-                </div>
-                <div class="answerBox">
-                    <input type="checkbox">
-                    <p>heard</p>
-                </div>
-                <div class="answerBox">
-                    <input type="checkbox">
-                    <p>Sòt</p>
-                </div>
+                <!-- THEM CAU TRA LOI O DAYYY -->
             </div>
-            <button id="doneAQuestButton">Hoàn thành</button>
+            <button id="doneAQuestButton" onclick="doneAQuest()">Hoàn thành</button>
         </div>
         <div class="box3">
             <p id="timeTest">
-                thời gian: 25 phút
+                thời gian: LOAD phút
             </p>
             <p id="timeTestNow">
-                Còn lại: 23:40 phút
+                Còn lại: LOAD phút
             </p>
             <div class="div1">
-                <button id="backQuest">Trước</button>
-                <button id="nextQuest">Tiếp</button>
+                <button id="backQuest" onclick="setupWeb('back')">Trước</button>
+                <button id="nextQuest" onclick="setupWeb('next')">Tiếp</button>
             </div>
+            <div class="div1">
+                <button id="finishQuest" onclick="finishQuest()">Nộp bài</button>
+            </div>
+            <div class="error" id="errorFinishQuest"></div>
         </div>
     </div>
     <p class="footer">&copy; 2025 QuizForge. All rights reserved.</p>
+
+    <div id="finishGui">
+        <button id="closeFinishGuiButton" onclick="closeFinishGui()">x</button>
+        <hr>
+        <h3 class="h31">Hoàn thành</h3>
+        <div class="bravoGui">
+            <p class="p1">Chúc Mừng!</p>
+            <p class="p2">Bạn đã hoàn thành kiểm tra</p>
+            <hr>
+            <p id="finishPoint">Điểm của bạn: LOAD%</p>
+        </div>
+        <div class="pointFinishGui">
+            <div class="pointFinishGuiTitle">
+                Kết quả cụ thể
+            </div>
+            <div class="pointFinishGuiValue">
+                <p id="totalQuestion">Tổng số câu hỏi:</p>
+                <p id="totalCorrectedQuestion">Câu trả lời đúng:</p>
+                <p id="totalWrongQuestion">Câu trả lời sai:</p>
+            </div>
+        </div>
+        <hr>
+        <div id="playerSelectButton">
+            <button id="doTestAgainButton" onclick="doTestAgain()">Làm lại</button>
+            <button id="ReturnToDashboardButton" onclick="ReturnToDashboard()">Trang Chủ</button>
+        </div>
+    </div>
+
     <script src="../js/loginCheck.js"></script>
     <script src="../js/doTest.js"></script>
 </body>

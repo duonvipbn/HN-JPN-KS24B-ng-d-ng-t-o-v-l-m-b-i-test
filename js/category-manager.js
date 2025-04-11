@@ -21,28 +21,7 @@ let errorEmojiItem = document.getElementById("errorEmojiItem");
 
 
 function getDataCategory() {
-    return JSON.parse(localStorage.getItem(dataCategory)) || [
-        {
-            "id": 1,
-            "categoryName": "Hóa",
-            "categoryEmoji": "😵‍💫"
-        },
-        {
-            "id": 2,
-            "categoryName": "CSS",
-            "categoryEmoji": "🥰"
-        },
-        {
-            "id": 3,
-            "categoryName": "Toán",
-            "categoryEmoji": "😯"
-        },
-        {
-            "id": 4,
-            "categoryName": "Văn",
-            "categoryEmoji": "👽"
-        }
-    ];
+    return JSON.parse(localStorage.getItem(dataCategory)) || [];
 }
 
 // function getData() {

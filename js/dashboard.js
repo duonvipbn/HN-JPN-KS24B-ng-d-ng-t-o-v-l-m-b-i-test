@@ -1,6 +1,6 @@
 let dataProductName = "dataProduct";
 let dataCategoryName = "dataCategory";
-
+let saveDoTestIdName = "saveDoTestId";
 
 let list = document.getElementById("list");
 let pageList = document.getElementById("pageList");
@@ -10,8 +10,10 @@ let sortDown = document.getElementById("sortDown");
 let page = 1;
 let pageSpace = 8;
 
+localStorage.setItem(saveDoTestIdName, -1);
+
 function getDataProduct() {
-    return JSON.parse(localStorage.getItem(dataProductName)) || [{ "id": 1, "testName": "Hóa học cơ bản", "categoryId": 1, "playerTime": 12, "playAmount": 0, "questions": [{ "content": "H2 +O2 =", "answers": [{ "answer": "hehe", "isCorrected": false }, { "answer": "hoho", "isCorrected": false }, { "answer": "haha", "isCorrected": false }, { "answer": "H2O", "isCorrected": true }] }, { "content": "Chất X có công thức phân tử C3H6O2, là este của axit axetic", "answers": [{ "answer": "C2H5COOH.", "isCorrected": false }, { "answer": "HO-C2H4-CHO.", "isCorrected": false }, { "answer": "CH3COOCH3", "isCorrected": true }, { "answer": "HCOOC2H5.", "isCorrected": false }] }] }];
+    return JSON.parse(localStorage.getItem(dataProductName)) || [];
 }
 localStorage[dataProductName] = JSON.stringify(getDataProduct());
 
@@ -79,7 +81,7 @@ function render(modeSort) {
                     <p class="typeItem">${getEmoji(dataProduct[i].categoryId)}</p>
                     <p class="nameItem">${dataProduct[i].testName}</p>
                     <p class="valItem">${dataProduct[i].questions.length} câu hỏi - ${dataProduct[i].playAmount} Lượt chơi</p>
-                    <button class="playItemButton">Chơi</button>
+                    <button class="playItemButton" onclick="openPlayTab(${dataProduct[i].id})">Chơi</button>
                 </div>
             </div>
         `;
@@ -94,5 +96,16 @@ function render(modeSort) {
 
     pageList.innerHTML = buttonMessage;
 }
-
+function openPlayTab(id) {
+    localStorage.setItem(saveDoTestIdName, id);
+    window.location.href = "../pages/doTest.html";
+}
+function randomTest() {
+    let dataProduct = getDataProduct();
+    let randomIndex = Math.floor(Math.random() * dataProduct.length);
+    if (randomIndex === 0) {
+        return;
+    }
+    openPlayTab(dataProduct[randomIndex].id);
+}
 render();

@@ -8,6 +8,7 @@ let deleteGui = document.getElementById("deleteGui");
 let tableList = document.getElementById("tableList");
 let pageList = document.getElementById("pageList");
 let inputFindItemName = document.getElementById("inputFindItemName");
+let sort = document.getElementById("sort");
 
 let selectIDDelete = -1;
 let page = 1;
@@ -53,13 +54,19 @@ function getEmoji(categoryId) {
 
 function newTabs(numberPage) {
     page = numberPage;
-    render();
+        if (sort.value === "name") {
+            render("select", sort.value);
+        } else if (sort.value === "timePlay") {
+            render("select", sort.value);
+        } else {
+            render();
+        }
+    
 };
 
-function render(mode) {
+function render(mode, value) {
     let dataProduct = getDataProduct();
     let dataShow = [];
-
     let message = `
                 <tr>
                     <th class="idTable">ID</th>
@@ -73,12 +80,36 @@ function render(mode) {
 
     if (mode === "search") {
         let search = inputFindItemName.value.trim();
-
+        sort.value = 'nothing';
         for (let i = 0; i < dataProduct.length; i++) {
             if (dataProduct[i].testName.toLowerCase().includes(search.toLowerCase())) {
                 dataShow.push(dataProduct[i]);
             }
         }
+    } else if (mode === "select" && value && value !== "nothing") {
+        inputFindItemName.value = "";
+        if (value === "name") {
+            for (let i = 0; i < dataProduct.length - 1; i++) {
+                for (let j = 0; j < dataProduct.length - 1 - i; j++) {
+                    if (dataProduct[j].testName < dataProduct[j + 1].testName) {
+                        let temp = dataProduct[j];
+                        dataProduct[j] = dataProduct[j + 1];
+                        dataProduct[j + 1] = temp;
+                    }
+                }
+            }
+        } else if (value === "timePlay") {
+            for (let i = 0; i < dataProduct.length - 1; i++) {
+                for (let j = 0; j < dataProduct.length - 1 - i; j++) {
+                    if (dataProduct[j].playerTime < dataProduct[j + 1].playerTime) {
+                        let temp = dataProduct[j];
+                        dataProduct[j] = dataProduct[j + 1];
+                        dataProduct[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        dataShow = dataProduct;
     } else {
         dataShow = dataProduct;
     }

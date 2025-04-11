@@ -71,7 +71,7 @@ a {
 .answerBox {
     display: flex;
 }
-#quest {
+#questAsk {
     margin-bottom: 10px;
 }
 #numberQuest {
@@ -85,7 +85,7 @@ a {
     background-color: rgb(25, 135, 84);
     color: white;
     border: 0px;
-    width: 80px;
+    width: 100px;
     height: 25px;
     border-radius: 5px;
     margin-top: 20px;
@@ -134,4 +134,116 @@ a {
 }
 .tip {
     font-weight: 550;
+}
+.selectQuestion {
+    background-color: blue;
+}
+.doneQuestion {
+    background-color: green;
+}
+#finishQuest {
+    border: none;
+    background-color: green;
+    color: white;
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+}
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+    text-align: center;
+}
+
+#finishGui {
+    display: none;
+    position: fixed;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    z-index: 20;
+}
+
+#closeFinishGuiButton {
+    height: 30px;
+    width: 30px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 95%;
+}
+.h31 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.bravoGui {
+    background-color: rgb(209, 231, 221);
+    padding: 20px;
+    border-radius: 5px;
+
+}
+.p1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.p2 {
+    margin-bottom: 20px;
+}
+
+#finishPoint {
+    margin-top: 20px;
+    font-weight: 600;
+}
+.pointFinishGui {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    margin-bottom: 20px;
+}
+.pointFinishGuiTitle {
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
+}
+.pointFinishGuiValue p {
+    margin-top: 20px;
+}
+#playerSelectButton {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#doTestAgainButton {
+    height: 25px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    background-color: blue;
+    color: white;
+    margin-right: 20px;
+}
+
+#ReturnToDashboardButton {
+    height: 25px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
+}
+.declineQuestionBackground {
+    background-color: red !important;
 }

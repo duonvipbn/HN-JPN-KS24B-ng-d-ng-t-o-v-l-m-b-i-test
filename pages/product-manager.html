@@ -25,10 +25,10 @@
         <div id="taskBar">
             <button id="addItem" onclick="teleport()">Thêm bài test</button>
             <div>
-                <select id="sort" name="">
+                <select id="sort" name="" oninput="render('select', this.value)">
                     <option value="nothing">Sắp xếp theo</option>
-                    <option value="a">a</option>
-                    <option value="b">b</option>
+                    <option value="name">Tên</option>
+                    <option value="timePlay">Thời gian chơi</option>
                 </select>
                 <input type="text" placeholder="Tìm kiếm theo tên" id="inputFindItemName" oninput="render('search')">
             </div>
