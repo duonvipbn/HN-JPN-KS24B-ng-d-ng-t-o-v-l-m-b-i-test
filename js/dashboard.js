@@ -102,10 +102,15 @@ function openPlayTab(id) {
 }
 function randomTest() {
     let dataProduct = getDataProduct();
-    let randomIndex = Math.floor(Math.random() * dataProduct.length);
-    if (randomIndex === 0) {
+
+    if (dataProduct.length === 0) return; 
+
+    if (dataProduct.length === 1) {
+        openPlayTab(dataProduct[0].id);
         return;
     }
+
+    let randomIndex = Math.floor(Math.random() * (dataProduct.length - 1)) + 1;
     openPlayTab(dataProduct[randomIndex].id);
 }
 render();

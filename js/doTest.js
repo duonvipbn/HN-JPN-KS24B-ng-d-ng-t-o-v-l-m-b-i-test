@@ -10,6 +10,7 @@ let timeTest = document.getElementById("timeTest");
 let timeTestNow = document.getElementById("timeTestNow");
 let doneAQuestButton = document.getElementById("doneAQuestButton");
 let errorFinishQuest = document.getElementById("errorFinishQuest");
+let finishQuestButton = document.getElementById("finishQuest");
 let finishGui = document.getElementById("finishGui");
 let overlay = document.getElementById("overlay");
 let totalQuestion = document.getElementById("totalQuestion");
@@ -174,6 +175,10 @@ function finishQuest(mode) {
     // ........phần tính điểm.........
     if (!lockWeb) {
         lockWeb = true;
+        doneAQuestButton.style.display = "none";
+        finishQuestButton.innerHTML = "Xem điểm!";
+        finishQuestButton.style.background = 'yellow';
+        finishQuestButton.style.color = 'black';
         let correctQuest = checkCorrectedQuestion();
         finishPoint.innerHTML = `Điểm của bạn: ${Math.round((correctQuest / dataPartTime.questions.length) * 100)}%`;
         totalQuestion.innerHTML = `Tổng số câu hỏi: ${dataPartTime.questions.length}`;
